@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>慢慢买</title>
+    <link rel="stylesheet" href="lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header>
+        <div class="logo fl">
+            <a href="index.html">
+                <img src="images/header_logo.png" alt="慢慢买">
+            </a>
+        </div>
+        <div class="load fr">
+            <a href="#">
+                <img src="images/header_app.png" alt="">
+            </a>
+        </div>
+
+    </header>
+
+    <div class="search">
+        <div class="inp">
+            <input type="text" placeholder="请输入比价内容">
+            <button>搜索</button>
+        </div>
+    </div>
+    <!-- 内容区域 -->
+    <div class="mmb">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <!-- 导航栏 -->
+                <div class="mm_nav">
+                    <ul class="clearfix">
+                        <li>
+                            <a href="">
+                                <img src="images/ic_search.png" alt="">
+                                <span>比价搜索</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="images/ic_cu.png" alt="">
+                                <span>省钱控</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="images/ic_coudanpin.png" alt="">
+                                <span>国内折扣</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="images/ic_bcj.png" alt="">
+                                <span>白菜价</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="images/haitao.png" alt="">
+                                <span>海淘折扣</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="images/ic_temai.png" alt="">
+                                <span>优惠券</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="images/ic_trend.png" alt="">
+                                <span>历史搜价</span>
+                            </a>
+                        </li>
+                        <li id="mm_more">
+                            <a href="javascrip:;">
+                                <img src="images/gengduo.png" alt="">
+                                <span>更多</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="more  clearfix" style="display: none;">
+                        <li>
+                            <a href="">
+                                <img src="images/ic_coudanpin.png" alt="">
+                                <span>凑单品</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="images/ic_kb.png" alt="">
+                                <span>口碑排行</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="images/ic_mall.png" alt="">
+                                <span>商城导航</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="images/ic_pp.png" alt="">
+                                <span>品牌大全</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 下面内容 -->
+                <!-- 内容标题 -->
+                <section class="clearfix">
+                    <span class="sp">超值折扣推荐</span>
+                    <a href="javascript:;">
+                        <img src="http://www.zuyushop.com/wap/images/more.png" alt="">
+                    </a>
+                </section>
+
+                <!-- 商品 -->
+                <ul class="mmb_product">
+                    <!-- 挖个坑 -->
+                </ul>
+
+                <!-- 更多 -->
+                <div class="more_product">
+                    <a href="moneyctrl.html">更多优惠信息</a>
+                </div>
+                <section class="clearfix">
+                    <span class="sp">品牌排行</span>
+                    <a href="javascript:;">
+                        <img src="http://www.zuyushop.com/wap/images/more.png" alt="">
+                    </a>
+                </section>
+                <!-- 底部导航栏 -->
+                <footer>
+                    <div class="nav clearfix">
+                        <a href="">登陆</a>
+                        <a href="">注册</a>
+                        <a href="javascript:;" id="come_back"><span class="mui-icon mui-icon-arrowthinup"></span>回到顶部</a>
+                    </div>
+
+                    <div class="tex">
+                        <div class="tex1">
+                            <a href="">手机下载APP</a>
+                            <a href="">慢慢买手机版</a>
+                            --掌上比价品台
+                        </div>
+                        <span class="tex2">m.manmanbuy.com</span>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/mui/js/mui.min.js"></script>
+<script src="lib/artTemplate/template.js"></script>
+<script src="js/common.js"></script>
+<script src="js/index.js"></script>
+
+<script type="text/html" id="tpl1">
+    {{ each result as v i }}
+    <li>
+        <a href="">
+            <img src="images/ic_search.png" alt="">
+            <span>比价搜索</span>
+        </a>
+    </li>
+    {{ /each }}
+</script>
+<script type="text/template" id="tpl2">
+    {{ each result as v i }}
+    <li>
+        <a href="moneyproduct.html?productid={{ v.productId }}">
+            {{ #v.productImgSm }}
+            <div>{{ v.productName }}
+                <span class="price">{{ v.productPinkage }}</span>
+            </div>
+            <div class="mmb_msg">
+                {{ v.productFrom }}| {{ v.productTime }}
+                <span class="mui-icon mui-icon-chat">&nbsp;{{ v.productComCount }}</span>
+            </div>
+        </a>
+    </li>
+    {{ /each }}
+</script>
+
+
+
+</html>
